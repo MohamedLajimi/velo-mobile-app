@@ -1,0 +1,34 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:get_it/get_it.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:karaba/env_config.dart';
+import 'package:karaba/firebase_options.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+final sl = GetIt.instance;
+
+Future<void> init() async {
+  await dotenv.load(fileName: ".env");
+
+  await Supabase.initialize(
+    url: EnvConfig.supabaseUrl,
+    anonKey: EnvConfig.supabaseAnonKey,
+  );
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  await GoogleSignIn.instance.initialize(
+    serverClientId: EnvConfig.serverClientId,
+  );
+
+  await EasyLocalization.ensureInitialized();
+
+  final sharedPrefs = await SharedPreferences.getInstance();
+
+  sl.registerLazySingleton(() => sharedPrefs);
+
+  sl.registerLazySingleton(() => Supabase.instance.client);
+}
