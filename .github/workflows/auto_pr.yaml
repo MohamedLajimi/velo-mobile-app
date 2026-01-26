@@ -1,0 +1,39 @@
+name: Auto Pull Request
+
+on:
+  push:
+    branches:
+      - 'feat/**'
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+      
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check if PR already exists
+        id: check_pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pr_list=$(gh pr list --head "${{ github.ref_name }}" --base dev --state open --json number)
+          if [ "$pr_list" == "[]" ]; then
+            echo "exists=false" >> $GITHUB_OUTPUT
+          else
+            echo "exists=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.check_pr.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+            --base dev \
+            --head "${{ github.ref_name }}" \
+            --title "feat: ${{ github.ref_name }}" \
+            --body "Automated PR for feature branch. Ensure all CI checks pass before merging."
