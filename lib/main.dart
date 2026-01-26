@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:karaba/core/common/app_snackbar.dart';
 import 'package:karaba/core/di/injection_container.dart';
 import 'package:karaba/core/theme/theme.dart';
 
@@ -105,24 +104,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 '$_counter',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text('MOHAMED LAJIMI'),
-                subtitle: Text('software engineer in mmobile dev'),
-              ),
-              TextFormField(decoration: InputDecoration(label: Text('data'))),
-              ElevatedButton(
-                onPressed: () {
-                  AppSnackbar.show(
-                    context,
-                    message: 'message',
-                    type: SnackBarType.success,
-                    actionLabel: 'retry',
-                  );
-                },
-                child: Text('connect'),
-              ),
-              Slider(min: 0, max: 100, value: 50, onChanged: (value) {}),
             ],
           ),
         ),
