@@ -1,0 +1,45 @@
+name: Feature Quality Gate
+
+on:
+  pull_request:
+    branches:
+      - dev
+      - main
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Create Dummy .env for CI
+        run: |
+          echo "SUPABASE_URL=mock" >> .env
+          echo "SUPABASE_ANON_KEY=mock" >> .env
+          echo "SERVER_CLIENT_ID=mock" >> .env
+
+      - name: Static Analysis
+        run: flutter analyze
+
+      - name: Check for Tests
+        id: check_tests
+        run: |
+          if [ -d "test" ] && [ "$(find test -name '*_test.dart' | wc -l)" -gt 0 ]; then
+            echo "has_tests=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_tests=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run Tests
+        if: steps.check_tests.outputs.has_tests == 'true'
+        run: flutter test --coverage
