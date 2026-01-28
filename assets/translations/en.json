@@ -1,0 +1,19 @@
+{
+    "onboarding": {
+        "skip": "Skip",
+        "next": "Next",
+        "get_started": "Get Started",
+        "page1": {
+            "title": "Welcome to Karaba",
+            "desc": "The ultimate destination for luxury car enthusiasts and buyers."
+        },
+        "page2": {
+            "title": "Smart Search",
+            "desc": "Find your dream car with our advanced filters and real-time listings."
+        },
+        "page3": {
+            "title": "Secure Deals",
+            "desc": "Connect directly with verified sellers in a secure environment."
+        }
+    }
+}

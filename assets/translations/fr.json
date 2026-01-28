@@ -1,0 +1,19 @@
+{
+    "onboarding": {
+        "skip": "Passer",
+        "next": "Suivant",
+        "get_started": "Commencer",
+        "page1": {
+            "title": "Bienvenue chez Karaba",
+            "desc": "La destination ultime pour les passionnés et acheteurs de voitures de luxe."
+        },
+        "page2": {
+            "title": "Recherche Intelligente",
+            "desc": "Trouvez la voiture de vos rêves grâce à nos filtres avancés."
+        },
+        "page3": {
+            "title": "Transactions Sécurisées",
+            "desc": "Connectez-vous directement avec des vendeurs vérifiés en toute sécurité."
+        }
+    }
+}
