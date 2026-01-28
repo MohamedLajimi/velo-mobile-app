@@ -23,6 +23,7 @@ class AppTheme {
         primaryContainer: AppPalette.primaryContainer,
         surface: AppPalette.surface,
         onSurface: AppPalette.primaryText,
+        onSurfaceVariant: AppPalette.secondaryText,
         surfaceContainer: AppPalette.card,
         error: AppPalette.error,
         outline: AppPalette.border,
@@ -84,7 +85,6 @@ class AppTheme {
       ),
 
       snackBarTheme: SnackBarThemeData(
-        
         dismissDirection: DismissDirection.horizontal,
         backgroundColor: AppPalette.card,
         contentTextStyle: const TextStyle(color: AppPalette.primaryText),
