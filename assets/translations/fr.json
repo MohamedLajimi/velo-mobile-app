@@ -1,4 +1,11 @@
 {
+    "enums": {
+        "user_role": {
+            "owner": "Propriétaire",
+            "renter": "Locataire",
+            "admin": "Administrateur"
+        }
+    },
     "onboarding": {
         "skip": "Passer",
         "next": "Suivant",
