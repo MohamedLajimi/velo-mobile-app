@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:karaba/core/common/custom_filled_button.dart';
-import 'package:karaba/core/common/custom_indicator.dart';
+import 'package:karaba/core/common/widgets/custom_filled_button.dart';
+import 'package:karaba/core/common/widgets/custom_indicator.dart';
 import 'package:karaba/core/extensions/theme_extension.dart';
 import 'package:karaba/features/onboarding/presentation/onboarding_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
