@@ -8,7 +8,7 @@ class UserEntity extends Equatable {
   final String email;
   final String phoneNumber;
   final String? avatarUrl;
-  final String? licenceUrl;
+  final String idCardUrl;
   final bool isVerified;
   final double rate;
   final int reviewCount;
@@ -20,12 +20,23 @@ class UserEntity extends Equatable {
     required this.email,
     required this.phoneNumber,
     this.avatarUrl,
-    this.licenceUrl,
+    required this.idCardUrl,
     this.isVerified = false,
     this.rate = 0.0,
     this.reviewCount = 0,
   });
 
   @override
-  List<Object?> get props => [id, email, role, isVerified];
+  List<Object?> get props => [
+    id,
+    role,
+    fullName,
+    email,
+    phoneNumber,
+    avatarUrl,
+    idCardUrl,
+    isVerified,
+    rate,
+    reviewCount,
+  ];
 }
