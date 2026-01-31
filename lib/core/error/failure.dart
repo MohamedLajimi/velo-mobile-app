@@ -4,7 +4,7 @@ sealed class Failure {
 }
 
 class NetworkFailure extends Failure {
-  const NetworkFailure([super.message = 'error.network_failure']);
+  const NetworkFailure([super.message = 'error.no_internet']);
 }
 
 class DatabaseFailure extends Failure {
@@ -15,11 +15,14 @@ class CacheFailure extends Failure {
   const CacheFailure(super.message);
 }
 
-
 class AuthFailure extends Failure {
   const AuthFailure(super.message);
 }
 
+class UploadFailure extends Failure {
+  const UploadFailure(super.message);
+}
+
 class ServerFailure extends Failure {
-  const ServerFailure([super.message = 'error.server_failure']);
+  const ServerFailure([super.message = 'error.server_error']);
 }
