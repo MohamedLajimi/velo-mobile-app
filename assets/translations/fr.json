@@ -22,5 +22,25 @@
             "title": "Transactions Sécurisées",
             "desc": "Connectez-vous directement avec des vendeurs vérifiés en toute sécurité."
         }
+    },
+    "error": {
+        "database_common": "Erreur de base de données.",
+        "upload_failed": "Échec du téléchargement.",
+        "no_internet": "Pas de connexion internet.",
+        "server_error": "Erreur serveur. Veuillez contacter le support."
+    },
+    "auth": {
+        "error": {
+            "invalid_credentials": "Email ou mot de passe incorrect.",
+            "user_not_found": "Aucun utilisateur trouvé.",
+            "email_exists": "Cet email est déjà utilisé.",
+            "generic_auth": "Échec de l'authentification.",
+            "canceled": "Connexion annulée.",
+            "interrupted": "Connexion interrompue.",
+            "config_error": "Erreur de configuration de l'app.",
+            "user_mismatch": "Incohérence de compte détectée.",
+            "ui_unavailable": "Interface de connexion indisponible.",
+            "google_unknown": "Erreur inattendue avec Google."
+        }
     }
 }
