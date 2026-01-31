@@ -10,6 +10,6 @@ class ResetPasswordUseCase implements UseCase<void, String> {
 
   @override
   Future<Either<Failure, void>> call(String email) {
-    return _authRepository.resetPassword(email);
+    return _authRepository.resetPassword(email: email);
   }
 }

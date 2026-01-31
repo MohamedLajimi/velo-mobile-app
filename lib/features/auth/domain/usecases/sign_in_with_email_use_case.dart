@@ -12,7 +12,7 @@ class SignInWithEmailUseCase implements UseCase<UserEntity, SignInParams> {
 
   @override
   Future<Either<Failure, UserEntity>> call(SignInParams params) =>
-      _authRepository.signInWithEmail(params);
+      _authRepository.signInWithEmail(params:  params);
 }
 
 class SignInParams {

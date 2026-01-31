@@ -13,7 +13,7 @@ class SignUpWithEmailUseCase implements UseCase<UserEntity, SignUpParams> {
 
   @override
   Future<Either<Failure, UserEntity>> call(SignUpParams params) =>
-      _authRepository.signUpWithEmail(params);
+      _authRepository.signUpWithEmail(params: params);
 }
 
 class SignUpParams {
@@ -22,8 +22,8 @@ class SignUpParams {
   final String password;
   final String phoneNumber;
   final UserRole role;
-  final String? profilePath;
-  final String? licensePath;
+  final String? avatarUrl;
+  final String idCardUrl;
 
   const SignUpParams({
     required this.fullName,
@@ -31,7 +31,7 @@ class SignUpParams {
     required this.password,
     required this.phoneNumber,
     required this.role,
-    this.profilePath,
-    this.licensePath,
+    this.avatarUrl,
+    required this.idCardUrl,
   });
 }
