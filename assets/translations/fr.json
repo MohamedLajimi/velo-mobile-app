@@ -41,6 +41,39 @@
             "user_mismatch": "Incohérence de compte détectée.",
             "ui_unavailable": "Interface de connexion indisponible.",
             "google_unknown": "Erreur inattendue avec Google."
+        },
+        "login": {
+            "title": "Bienvenue chez Karaba",
+            "subtitle": "Connectez-vous pour accéder à votre compte Karaba",
+            "email": "Adresse e-mail",
+            "password": "Mot de passe",
+            "forgot_password": "Mot de passe oublié ?",
+            "login_button": "Se connecter",
+            "continue_with": "Ou continuer avec",
+            "google_signin": "Se connecter avec Google",
+            "no_account": "Vous n'avez pas de compte ?",
+            "signup_link": "S'inscrire"
+        },
+        "signup": {
+            "title": "Créer un compte",
+            "subtitle": "Rejoignez la communauté Karaba dès aujourd'hui"
+        },
+        "validation": {
+            "invalid_email": "Veuillez entrer une adresse e-mail valide",
+            "invalid_password": "Le mot de passe doit contenir au moins 6 caractères"
+        },
+        "reset_password": {
+            "title": "Mot de passe oublié ?",
+            "subtitle": "Pas de panique ! Entrez votre e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+            "email_label": "Adresse e-mail",
+            "send_button": "Envoyer le lien",
+            "success_title": "Vérifiez vos e-mails",
+            "success_message_part1": "Nous avons envoyé un lien de récupération à ",
+            "success_message_part2": ". Veuillez vérifier votre boîte de réception.",
+            "resend_label": "Vous n'avez pas reçu l'e-mail ?",
+            "resend_button": "Renvoyer le lien",
+            "resend_wait": "Renvoyer dans {seconds}s",
+            "back_to_login": "Retour à la connexion"
         }
     }
 }

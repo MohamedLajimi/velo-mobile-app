@@ -29,7 +29,6 @@
         "no_internet": "No internet connection.",
         "server_error": "Server error. Please contact support."
     },
-
     "auth": {
         "error": {
             "invalid_credentials": "Invalid email or password.",
@@ -42,6 +41,39 @@
             "user_mismatch": "Account mismatch detected.",
             "ui_unavailable": "Sign-in UI could not be displayed.",
             "google_unknown": "Google Sign-in failed unexpectedly."
+        },
+        "login": {
+            "title": "Welcome To Karaba",
+            "subtitle": "Sign in to access your Karaba account",
+            "email": "Email Address",
+            "password": "Password",
+            "forgot_password": "Forgot Password?",
+            "login_button": "Connect",
+            "continue_with": "Or continue with",
+            "google_signin": "Sign in with Google",
+            "no_account": "Don't have an account?",
+            "signup_link": "Sign Up"
+        },
+        "signup": {
+            "title": "Create Account",
+            "subtitle": "Join the Karaba community today"
+        },
+        "validation": {
+            "invalid_email": "Please enter a valid email address",
+            "invalid_password": "Password must be at least 6 characters"
+        },
+        "reset_password": {
+            "title": "Forgot Password?",
+            "subtitle": "Don't worry! Enter your email and we will send you a link to reset your password.",
+            "email_label": "Email Address",
+            "send_button": "Send Reset Link",
+            "success_title": "Check Your Email",
+            "success_message_part1": "We have sent a password recovery link to ",
+            "success_message_part2": ". Please check your inbox.",
+            "resend_label": "Didn't receive the email?",
+            "resend_button": "Resend Link",
+            "resend_wait": "Resend in {seconds}s",
+            "back_to_login": "Back to Login"
         }
     }
 }
