@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:karaba/core/common/widgets/custom_filled_button.dart';
 import 'package:karaba/core/common/widgets/custom_indicator.dart';
+import 'package:karaba/core/extensions/spacing_extension.dart';
 import 'package:karaba/core/extensions/theme_extension.dart';
 import 'package:karaba/features/onboarding/presentation/onboarding_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -33,7 +34,7 @@ class OnboardingItem extends StatelessWidget {
           style: context.textTheme.headlineMedium?.copyWith(
             fontWeight: FontWeight.bold,
           ),
-          textAlign: TextAlign.center,
+          textAlign: .center,
         ).animate().fadeIn(delay: 300.ms).slideY(begin: 0.2),
 
         Text(
@@ -43,9 +44,7 @@ class OnboardingItem extends StatelessWidget {
           ),
           textAlign: TextAlign.center,
         ).animate().fadeIn(delay: 500.ms).slideY(begin: 0.2),
-
-        const SizedBox(height: 10),
-
+        10.vSpace,
         CustomIndicator(
           itemCount: onboardingSections.length,
           currentIndex: currentIndex,
