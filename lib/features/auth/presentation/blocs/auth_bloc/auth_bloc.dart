@@ -27,7 +27,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
        super(AuthInitial()) {
     on<SignInWithEmailRequested>(_onSignInWithEmail);
     on<SignUpWithEmailRequested>(_onSignUpWithEmail);
-    on<GoogleSignInRequested>(_onGoogleSignIn);
+    on<SignInWithGoogleRequested>(_onGoogleSignIn);
     on<AuthLogoutRequested>(_onLogout);
   }
 
@@ -72,7 +72,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   Future<void> _onGoogleSignIn(
-    GoogleSignInRequested event,
+    SignInWithGoogleRequested event,
     Emitter<AuthState> emit,
   ) async {
     emit(const AuthLoading(type: AuthLoadingType.google));

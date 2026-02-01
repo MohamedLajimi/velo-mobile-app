@@ -9,7 +9,7 @@ sealed class UserState extends Equatable {
 
 final class UserInitial extends UserState {}
 
-class UserStatusCheck extends UserState{}
+class UserStatusCheck extends UserState {}
 
 class UserAuthenticated extends UserState {
   final UserEntity user;
@@ -20,3 +20,12 @@ class UserAuthenticated extends UserState {
 }
 
 class UserUnauthenticated extends UserState {}
+
+class UserError extends UserState {
+  final String message;
+
+  const UserError(this.message);
+
+  @override
+  List<Object> get props => [];
+}

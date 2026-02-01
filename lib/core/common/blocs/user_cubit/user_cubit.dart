@@ -19,7 +19,7 @@ class UserCubit extends Cubit<UserState> {
 
     final result = await _getCurrentUserUseCase.call();
 
-    result.fold((failure) => emit(UserUnauthenticated()), (user) {
+    result.fold((failure) => emit(UserError(failure.message)), (user) {
       if (user != null) {
         emit(UserAuthenticated(user));
       } else {
