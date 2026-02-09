@@ -1,6 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:karaba/core/common/models/user_model.dart';
 import 'package:karaba/core/services/storage_service.dart';
+import 'package:karaba/features/auth/data/models/complete_profile_params_model.dart';
 import 'package:karaba/features/auth/data/models/sign_up_params_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -12,9 +14,13 @@ abstract interface class AuthRemoteDataSource {
 
   Future<UserModel> signUpWithEmail({required SignUpParamsModel params});
 
-  Future<(UserModel, bool)> signInWithGoogle();
+  Future<UserModel> signInWithGoogle();
 
   Future<UserModel?> getCurrentUser();
+
+  Future<UserModel> completeProfile({
+    required CompleteProfileParamsModel params,
+  });
 
   Future<void> resetPassword({required String email});
 
@@ -96,6 +102,7 @@ class SupabaseAuthRemoteDataSource implements AuthRemoteDataSource {
           'id': userId,
           'id_card_url': idCardUrl,
           'avatar_url': avatarUrl,
+          'has_finished_profile': true,
         })
         .select()
         .single();
@@ -104,7 +111,7 @@ class SupabaseAuthRemoteDataSource implements AuthRemoteDataSource {
   }
 
   @override
-  Future<(UserModel, bool)> signInWithGoogle() async {
+  Future<UserModel> signInWithGoogle() async {
     final GoogleSignInAccount googleUser = await GoogleSignIn.instance
         .authenticate();
 
@@ -116,37 +123,66 @@ class SupabaseAuthRemoteDataSource implements AuthRemoteDataSource {
       idToken: idToken!,
     );
 
-    final existingProfile = await _supabaseClient
+    var existingProfile = await _supabaseClient
         .from('profiles')
         .select()
         .eq('id', authResponse.user!.id)
         .maybeSingle();
 
-    final profileData = await _supabaseClient
+    existingProfile ??= await _supabaseClient
         .from('profiles')
         .upsert({
           'id': authResponse.user!.id,
           'email': googleUser.email,
-          if (existingProfile == null) 'full_name': googleUser.displayName,
-          if (existingProfile == null) 'avatar_url': googleUser.photoUrl,
+          'full_name': googleUser.displayName,
+          'avatar_url': googleUser.photoUrl,
+          'has_finished_profile': false,
         })
         .select()
         .single();
 
-    final unfinishedProfile = existingProfile == null;
-
-    return (UserModel.fromJson(profileData), unfinishedProfile);
+    return UserModel.fromJson(existingProfile);
   }
 
   @override
   Future<UserModel?> getCurrentUser() async {
-    final session = _supabaseClient.auth.currentSession;
-    if (session == null) return null;
+    final refreshedSession = await _supabaseClient.auth.refreshSession();
+    if (refreshedSession.session == null) {
+      return null;
+    }
 
     final profileData = await _supabaseClient
         .from('profiles')
         .select()
-        .eq('id', session.user.id)
+        .eq('id', refreshedSession.session!.user.id)
+        .single();
+    return UserModel.fromJson(profileData);
+  }
+
+  @override
+  Future<UserModel> completeProfile({
+    required CompleteProfileParamsModel params,
+  }) async {
+    final String? idCardUrl = await _storageService.uploadFile(
+      bucket: 'identity_cards',
+      folderPath: params.userId,
+      localPath: params.idCardPath,
+      prefix: 'id_card',
+    );
+    debugPrint(idCardUrl);
+    if (idCardUrl == null) {
+      throw const StorageException('auth.error.id_card_upload_failure');
+    }
+
+    final profileData = await _supabaseClient
+        .from('profiles')
+        .update({
+          ...params.toJson(),
+          'id_card_url': idCardUrl,
+          'has_finished_profile': true,
+        })
+        .eq('id', params.userId)
+        .select()
         .single();
 
     return UserModel.fromJson(profileData);
