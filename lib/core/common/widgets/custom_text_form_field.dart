@@ -1,9 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:karaba/core/extensions/theme_extension.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String hintText;
   final TextEditingController controller;
+  final bool? isRequired;
   final TextInputType? inputType;
   final bool isObscureText;
   final IconData? prefixIcon;
@@ -17,6 +19,7 @@ class CustomTextFormField extends StatelessWidget {
     super.key,
     required this.hintText,
     required this.controller,
+    this.isRequired = true,
     this.inputType = TextInputType.text,
     this.isObscureText = false,
     this.prefixIcon,
@@ -36,12 +39,9 @@ class CustomTextFormField extends StatelessWidget {
       onChanged: onChanged,
       onEditingComplete: onEditingComplete,
       style: context.textTheme.bodyMedium,
-      onTapOutside: (event) {
-        FocusManager.instance.primaryFocus?.unfocus();
-      },
       validator: (value) {
-        if (value == null || value.trim().isEmpty) {
-          return "Field is required";
+        if (isRequired == true && (value == null || value.trim().isEmpty)) {
+          return "$hintText ${context.tr('validation.is_required')}";
         }
         return validator?.call(value);
       },
