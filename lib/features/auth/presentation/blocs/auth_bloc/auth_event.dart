@@ -50,4 +50,21 @@ class SignUpWithEmailRequested extends AuthEvent {
   ];
 }
 
-class AuthLogoutRequested extends AuthEvent {}
+class CompleteProfileRequested extends AuthEvent {
+  final String userId;
+  final String phoneNumber;
+  final UserRole role;
+  final String idCardPath;
+
+  const CompleteProfileRequested({
+    required this.userId,
+    required this.phoneNumber,
+    required this.role,
+    required this.idCardPath,
+  });
+
+  @override
+  List<Object?> get props => [phoneNumber, role, idCardPath];
+}
+
+class LogoutRequested extends AuthEvent {}
