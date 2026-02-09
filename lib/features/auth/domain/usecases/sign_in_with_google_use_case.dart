@@ -4,13 +4,13 @@ import 'package:karaba/core/error/failure.dart';
 import 'package:karaba/core/usecase/use_case.dart';
 import 'package:karaba/features/auth/domain/repositories/auth_repository.dart';
 
-class SignInWithGoogleUseCase implements NoParamsUseCase<(UserEntity, bool)> {
+class SignInWithGoogleUseCase implements NoParamsUseCase<UserEntity> {
   final AuthRepository _authRepository;
 
   const SignInWithGoogleUseCase({required AuthRepository authRepository})
     : _authRepository = authRepository;
 
   @override
-  Future<Either<Failure, (UserEntity, bool)>> call() =>
+  Future<Either<Failure, UserEntity>> call() =>
       _authRepository.signInWithGoogle();
 }
