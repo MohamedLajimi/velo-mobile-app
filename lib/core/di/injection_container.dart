@@ -5,6 +5,8 @@ import 'package:get_it/get_it.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:karaba/core/common/blocs/language_cubit/language_cubit.dart';
 import 'package:karaba/core/routes/app_router.dart';
+import 'package:karaba/core/services/media_service.dart';
+import 'package:karaba/core/services/permission_service.dart';
 import 'package:karaba/core/services/storage_service.dart';
 import 'package:karaba/env_config.dart';
 import 'package:karaba/features/auth/auth_injection.dart';
@@ -39,6 +41,14 @@ Future<void> init() async {
   sl.registerLazySingleton(() => StorageService(supabaseClient: sl()));
 
   sl.registerLazySingleton(() => LanguageCubit(sharedPreferences: sl()));
+
+    sl.registerLazySingleton<PermissionService>(
+    () => PermissionServiceImpl(),
+  );
+  
+  sl.registerLazySingleton<MediaService>(
+    () => MediaServiceImpl(permissionService: sl()),
+  );
 
   initOnboarding(sl);
 
