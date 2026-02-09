@@ -3,6 +3,7 @@ import 'package:karaba/core/common/blocs/user_cubit/user_cubit.dart';
 import 'package:karaba/features/auth/data/datasources/auth_remote_data_source.dart';
 import 'package:karaba/features/auth/data/repositories/auth_repository_imp.dart';
 import 'package:karaba/features/auth/domain/repositories/auth_repository.dart';
+import 'package:karaba/features/auth/domain/usecases/complete_profile_use_case.dart';
 import 'package:karaba/features/auth/domain/usecases/get_current_user_use_case.dart';
 import 'package:karaba/features/auth/domain/usecases/logout_use_case.dart';
 import 'package:karaba/features/auth/domain/usecases/reset_password_use_case.dart';
@@ -19,6 +20,7 @@ Future<void> initAuth(GetIt sl) async {
       signInWithGoogle: sl(),
       signInWithEmailUseCase: sl(),
       signUpWithEmailUseCase: sl(),
+      completeProfileUseCase: sl(),
       logoutUseCase: sl(),
     ),
   );
@@ -32,6 +34,7 @@ Future<void> initAuth(GetIt sl) async {
   sl.registerLazySingleton(() => SignInWithEmailUseCase(authRepository: sl()));
   sl.registerLazySingleton(() => SignUpWithEmailUseCase(authRepository: sl()));
   sl.registerLazySingleton(() => ResetPasswordUseCase(authRepository: sl()));
+  sl.registerLazySingleton(() => CompleteProfileUseCase(authRepository: sl()));
   sl.registerLazySingleton(() => LogoutUseCase(authRepository: sl()));
   sl.registerLazySingleton(() => GetCurrentUserUseCase(authRepository: sl()));
 
