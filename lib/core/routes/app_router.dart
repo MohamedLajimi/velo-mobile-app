@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:karaba/core/common/blocs/user_cubit/user_cubit.dart';
 import 'package:karaba/core/common/widgets/root_screen.dart';
-import 'package:karaba/core/di/injection_container.dart';
 import 'package:karaba/core/routes/go_router_refresh_stream.dart';
-import 'package:karaba/features/auth/presentation/blocs/auth_bloc/auth_bloc.dart';
 import 'package:karaba/features/auth/presentation/routes/auth_routes.dart';
 import 'package:karaba/features/onboarding/presentation/bloc/onboarding_bloc.dart';
 import 'package:karaba/features/onboarding/presentation/screens/onboarding_screen.dart';
-import 'package:karaba/home_test.dart';
 
 class AppRouter {
   final UserCubit userCubit;
@@ -65,13 +61,6 @@ class AppRouter {
     },
     routes: [
       GoRoute(path: '/', builder: (context, state) => const RootScreen()),
-
-      GoRoute(
-        name: 'home',
-        path: '/home',
-        builder: (context, state) =>
-            BlocProvider(create: (context) => sl<AuthBloc>(), child: HomeTest()),
-      ),
 
       GoRoute(
         name: 'onboarding',
