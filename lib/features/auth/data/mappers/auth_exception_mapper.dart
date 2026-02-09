@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:karaba/core/error/core_exception_mapper.dart';
 import 'package:karaba/core/error/failure.dart';
@@ -5,9 +6,16 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 class AuthExceptionMapper {
   static Failure map(dynamic e) {
+    debugPrint(e.toString());
+
+    if (e is AuthSessionMissingException || e is AuthApiException) {
+      return NoSessionFailure('No session');
+    }
+
     if (e is AuthException) {
       return AuthFailure(_getAuthMessage(e.code));
     }
+
     if (e is GoogleSignInException) {
       return AuthFailure(_getGoogleMessage(e));
     }
@@ -18,13 +26,13 @@ class AuthExceptionMapper {
   static String _getAuthMessage(String? code) {
     switch (code) {
       case 'invalid_credentials':
-        return 'auth.errors.invalid_credentials';
+        return 'auth.error.invalid_credentials';
       case 'user_not_found':
-        return 'auth.errors.user_not_found';
+        return 'auth.error.user_not_found';
       case 'email_exists':
-        return 'auth.errors.email_exists';
+        return 'auth.error.email_exists';
       default:
-        return 'auth.errors.generic_auth';
+        return 'auth.error.generic_auth';
     }
   }
 
