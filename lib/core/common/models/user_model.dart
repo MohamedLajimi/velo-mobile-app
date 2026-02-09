@@ -11,6 +11,7 @@ class UserModel extends UserEntity {
     super.avatarUrl,
     required super.idCardUrl,
     super.isVerified,
+    required super.hasFinishedProfile,
     super.rate,
     super.reviewCount,
   });
@@ -24,6 +25,7 @@ class UserModel extends UserEntity {
     avatarUrl: json['avatar_url'] as String?,
     idCardUrl: json['id_card_url'] ?? '',
     isVerified: json['is_verified'] ?? false,
+    hasFinishedProfile: json['has_finished_profile'] ?? false,
     rate: (json['rate'] as num?)?.toDouble() ?? 0.0,
     reviewCount: json['review_count'] ?? 0,
   );
@@ -37,6 +39,7 @@ class UserModel extends UserEntity {
     'avatar_url': avatarUrl,
     'id_card_url': idCardUrl,
     'is_verified': isVerified,
+    'has_finished_profile': hasFinishedProfile,
     'rate': rate,
     'review_count': reviewCount,
   };

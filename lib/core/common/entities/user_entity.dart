@@ -10,6 +10,7 @@ class UserEntity extends Equatable {
   final String? avatarUrl;
   final String idCardUrl;
   final bool isVerified;
+  final bool hasFinishedProfile;
   final double rate;
   final int reviewCount;
 
@@ -22,6 +23,7 @@ class UserEntity extends Equatable {
     this.avatarUrl,
     required this.idCardUrl,
     this.isVerified = false,
+    required this.hasFinishedProfile,
     this.rate = 0.0,
     this.reviewCount = 0,
   });
@@ -36,6 +38,7 @@ class UserEntity extends Equatable {
     avatarUrl,
     idCardUrl,
     isVerified,
+    hasFinishedProfile,
     rate,
     reviewCount,
   ];
