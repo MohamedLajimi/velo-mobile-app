@@ -29,7 +29,7 @@ class SocialAuthButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(iconPath, height: 24, width: 24),
-          Text(text, style: context.textTheme.bodyLarge),
+          Text(text, style: context.textTheme.titleSmall),
         ],
       ),
     );
