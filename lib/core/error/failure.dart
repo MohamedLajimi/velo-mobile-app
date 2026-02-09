@@ -19,8 +19,20 @@ class AuthFailure extends Failure {
   const AuthFailure(super.message);
 }
 
+class NoSessionFailure extends Failure {
+  const NoSessionFailure(super.message);
+}
+
 class UploadFailure extends Failure {
   const UploadFailure(super.message);
+}
+
+class PermissionFailure extends Failure {
+  const PermissionFailure(super.message);
+}
+
+class MediaFailure extends Failure {
+  const MediaFailure(super.message);
 }
 
 class ServerFailure extends Failure {
