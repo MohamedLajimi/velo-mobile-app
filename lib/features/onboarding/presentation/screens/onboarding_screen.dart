@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:karaba/core/common/widgets/language_dropdown_selector.dart';
 import 'package:karaba/features/onboarding/presentation/bloc/onboarding_bloc.dart';
 import 'package:karaba/features/onboarding/presentation/onboarding_helper.dart';
 import 'package:karaba/features/onboarding/presentation/widgets/onboarding_item.dart';
@@ -49,6 +50,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       child: Scaffold(
         appBar: AppBar(
           actions: [
+            const LanguageDropdownSelector(),
             TextButton(
               onPressed: _finish,
               child: Text(context.tr('onboarding.skip')),
@@ -56,13 +58,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ],
         ),
         body: Padding(
-          padding: .symmetric(horizontal: 16, vertical: 24),
+          padding: const .symmetric(horizontal: 16, vertical: 24),
           child: PageView.builder(
             controller: _pageController,
             onPageChanged: (value) => setState(() {
               _currentPage = value;
             }),
-            itemCount: onboardingSections.length,
+          itemCount: onboardingSections.length,
             itemBuilder: (context, index) => OnboardingItem(
               model: onboardingSections[index],
               currentIndex: _currentPage,

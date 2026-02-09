@@ -1,4 +1,14 @@
 {
+    "enums": {
+        "user_role": {
+            "owner": "Propriétaire",
+            "renter": "Locataire",
+            "admin": "Administrateur"
+        }
+    },
+    "validation": {
+        "is_required": "est obligatoire"
+    },
     "onboarding": {
         "skip": "Passer",
         "next": "Suivant",
@@ -15,5 +25,102 @@
             "title": "Transactions Sécurisées",
             "desc": "Connectez-vous directement avec des vendeurs vérifiés en toute sécurité."
         }
+    },
+    "error": {
+        "database_common": "Erreur de base de données.",
+        "upload_failed": "Échec du téléchargement.",
+        "no_internet": "Pas de connexion internet.",
+        "server_error": "Erreur serveur. Veuillez contacter le support."
+    },
+    "auth": {
+        "error": {
+            "invalid_credentials": "Email ou mot de passe incorrect.",
+            "user_not_found": "Aucun utilisateur trouvé.",
+            "email_exists": "Cet email est déjà utilisé.",
+            "generic_auth": "Échec de l'authentification.",
+            "canceled": "Connexion annulée.",
+            "interrupted": "Connexion interrompue.",
+            "config_error": "Erreur de configuration de l'app.",
+            "user_mismatch": "Incohérence de compte détectée.",
+            "ui_unavailable": "Interface de connexion indisponible.",
+            "google_unknown": "Erreur inattendue avec Google."
+        },
+        "login": {
+            "title": "Bienvenue chez Karaba",
+            "subtitle": "Connectez-vous pour accéder à votre compte Karaba",
+            "email": "Adresse e-mail",
+            "password": "Mot de passe",
+            "forgot_password": "Mot de passe oublié ?",
+            "login_button": "Se connecter",
+            "continue_with": "Ou continuer avec",
+            "google_signin": "Se connecter avec Google",
+            "no_account": "Vous n'avez pas de compte ?",
+            "signup_link": "S'inscrire"
+        },
+        "signup": {
+            "title": "Créer un compte",
+            "subtitle": "Rejoignez la communauté Karaba dès aujourd'hui",
+            "personal": "Informations Personelles",
+            "credentials": "Identifiants",
+            "identity": "Identité",
+            "full_name": "Nom Complet",
+            "phone": "Numéro de téléphone",
+            "email": "Email",
+            "password": "Mot de passe",
+            "select_role": "Sélectionner votre rôle",
+            "id_card": "Carte d'identité",
+            "upload_id_card": "Télécharger carte d'identité",
+            "upload_id_card_hint": "Appuyez pour télécharger le recto de votre CI",
+            "change_id_card": "Changer la photo",
+            "create_account": "Créer un compte",
+            "google_signup": "S'inscrire avec Google",
+            "already_have_account": "Vous avez déjà un compte ?",
+            "login_link": "Se connecter"
+        },
+        "validation": {
+            "invalid_email": "Veuillez entrer une adresse e-mail valide",
+            "invalid_password": "Le mot de passe doit contenir au moins 6 caractères",
+            "id_card_required": "La carte d'identité est requise"
+        },
+        "reset_password": {
+            "title": "Mot de passe oublié ?",
+            "subtitle": "Pas de panique ! Entrez votre e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+            "email_label": "Adresse e-mail",
+            "send_button": "Envoyer le lien",
+            "success_title": "Vérifiez vos e-mails",
+            "success_message_part1": "Nous avons envoyé un lien de récupération à ",
+            "success_message_part2": ". Veuillez vérifier votre boîte de réception.",
+            "resend_label": "Vous n'avez pas reçu l'e-mail ?",
+            "resend_button": "Renvoyer le lien",
+            "resend_wait": "Renvoyer dans {seconds}s",
+            "back_to_login": "Retour à la connexion"
+        },
+        "complete_profile": {
+            "title": "Complétez votre profil",
+            "subtitle": "Encore quelques détails pour prendre la route avec Karaba.",
+            "submit_button": "Terminer l'inscription"
+        }
+    },
+    "permissions": {
+        "camera_denied": "L'accès à la caméra est définitivement refusé. Veuillez l'activer dans les paramètres.",
+        "camera_required": "L'autorisation de la caméra est requise pour prendre des photos.",
+        "storage_denied": "L'accès au stockage est définitivement refusé. Veuillez l'activer dans les paramètres.",
+        "storage_required": "L'autorisation de stockage est requise pour accéder aux fichiers.",
+        "photos_denied": "L'accès aux photos est définitivement refusé. Veuillez l'activer dans les paramètres.",
+        "photos_required": "L'autorisation d'accès aux photos est requise pour sélectionner des images."
+    },
+    "media": {
+        "no_image_selected": "Aucune image n'a été sélectionnée.",
+        "no_images_selected": "Aucune image n'a été sélectionnée.",
+        "no_document_selected": "Aucun document n'a été sélectionné.",
+        "no_documents_selected": "Aucun document n'a été sélectionné.",
+        "invalid_document": "Fichier de document invalide.",
+        "invalid_documents": "Fichiers de document invalides.",
+        "error": "Une erreur s'est produite lors de l'accès aux médias",
+        "take_photo": "Prendre une photo",
+        "choose_from_gallery": "Choisir depuis la galerie",
+        "choose_document": "Choisir un document",
+        "choose_documents": "Choisir des documents",
+        "delete_photo": "Supprimer la photo"
     }
 }

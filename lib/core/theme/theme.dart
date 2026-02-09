@@ -207,7 +207,7 @@ class AppTheme {
             fontFamily: 'SpaceGrotesk',
             color: AppPalette.secondaryText,
             fontWeight: FontWeight.w700,
-            fontSize: AppDimensions.sp(16),
+            fontSize: AppDimensions.sp(14),
           ),
           elevation: 0,
           minimumSize: const Size(double.infinity, 56),
@@ -248,7 +248,7 @@ class AppTheme {
       cardTheme: CardThemeData(
         color: AppPalette.card,
         elevation: 0,
-        shape: RoundedRectangleBorder(
+        shape: RoundedSuperellipseBorder(
           borderRadius: BorderRadius.circular(16),
           side: const BorderSide(color: AppPalette.border),
         ),
