@@ -76,10 +76,6 @@ class _SignInFormState extends State<SignInForm> {
             onTapSuffixIcon: _setPasswordVisibility,
             hintText: context.tr('auth.login.password'),
             controller: _passwordController,
-            validator: (value) => AuthValidators.password(
-              value,
-              context.tr('auth.validation.invalid_password'),
-            ),
           ),
           Align(
             alignment: AlignmentGeometry.centerRight,
@@ -90,7 +86,7 @@ class _SignInFormState extends State<SignInForm> {
           ),
           16.vSpace,
           BlocSelector<AuthBloc, AuthState, bool>(
-            selector: (state) => state is AuthLoading && state.isSignIn,
+            selector: (state) => state is AuthLoading && !state.withGoogle,
             builder: (context, isLoading) => CustomFilledButton(
               isLoading: isLoading,
               text: context.tr('auth.login.login_button'),
