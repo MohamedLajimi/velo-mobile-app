@@ -6,6 +6,9 @@
             "admin": "Administrateur"
         }
     },
+    "validation": {
+        "is_required": "est obligatoire"
+    },
     "onboarding": {
         "skip": "Passer",
         "next": "Suivant",
@@ -56,11 +59,28 @@
         },
         "signup": {
             "title": "Créer un compte",
-            "subtitle": "Rejoignez la communauté Karaba dès aujourd'hui"
+            "subtitle": "Rejoignez la communauté Karaba dès aujourd'hui",
+            "personal": "Informations Personelles",
+            "credentials": "Identifiants",
+            "identity": "Identité",
+            "full_name": "Nom Complet",
+            "phone": "Numéro de téléphone",
+            "email": "Email",
+            "password": "Mot de passe",
+            "select_role": "Sélectionner votre rôle",
+            "id_card": "Carte d'identité",
+            "upload_id_card": "Télécharger carte d'identité",
+            "upload_id_card_hint": "Appuyez pour télécharger le recto de votre CI",
+            "change_id_card": "Changer la photo",
+            "create_account": "Créer un compte",
+            "google_signup": "S'inscrire avec Google",
+            "already_have_account": "Vous avez déjà un compte ?",
+            "login_link": "Se connecter"
         },
         "validation": {
             "invalid_email": "Veuillez entrer une adresse e-mail valide",
-            "invalid_password": "Le mot de passe doit contenir au moins 6 caractères"
+            "invalid_password": "Le mot de passe doit contenir au moins 6 caractères",
+            "id_card_required": "La carte d'identité est requise"
         },
         "reset_password": {
             "title": "Mot de passe oublié ?",
@@ -74,6 +94,33 @@
             "resend_button": "Renvoyer le lien",
             "resend_wait": "Renvoyer dans {seconds}s",
             "back_to_login": "Retour à la connexion"
+        },
+        "complete_profile": {
+            "title": "Complétez votre profil",
+            "subtitle": "Encore quelques détails pour prendre la route avec Karaba.",
+            "submit_button": "Terminer l'inscription"
         }
+    },
+    "permissions": {
+        "camera_denied": "L'accès à la caméra est définitivement refusé. Veuillez l'activer dans les paramètres.",
+        "camera_required": "L'autorisation de la caméra est requise pour prendre des photos.",
+        "storage_denied": "L'accès au stockage est définitivement refusé. Veuillez l'activer dans les paramètres.",
+        "storage_required": "L'autorisation de stockage est requise pour accéder aux fichiers.",
+        "photos_denied": "L'accès aux photos est définitivement refusé. Veuillez l'activer dans les paramètres.",
+        "photos_required": "L'autorisation d'accès aux photos est requise pour sélectionner des images."
+    },
+    "media": {
+        "no_image_selected": "Aucune image n'a été sélectionnée.",
+        "no_images_selected": "Aucune image n'a été sélectionnée.",
+        "no_document_selected": "Aucun document n'a été sélectionné.",
+        "no_documents_selected": "Aucun document n'a été sélectionné.",
+        "invalid_document": "Fichier de document invalide.",
+        "invalid_documents": "Fichiers de document invalides.",
+        "error": "Une erreur s'est produite lors de l'accès aux médias",
+        "take_photo": "Prendre une photo",
+        "choose_from_gallery": "Choisir depuis la galerie",
+        "choose_document": "Choisir un document",
+        "choose_documents": "Choisir des documents",
+        "delete_photo": "Supprimer la photo"
     }
 }

@@ -6,6 +6,9 @@
             "admin": "Administrator"
         }
     },
+    "validation": {
+        "is_required": "is required"
+    },
     "onboarding": {
         "skip": "Skip",
         "next": "Next",
@@ -56,11 +59,28 @@
         },
         "signup": {
             "title": "Create Account",
-            "subtitle": "Join the Karaba community today"
+            "subtitle": "Join the Karaba community today",
+            "personal": "Personal Informations",
+            "credentials": "Credentials",
+            "identity": "Identity",
+            "full_name": "Full Name",
+            "phone": "Phone Number",
+            "email": "Email",
+            "password": "Password",
+            "select_role": "Select Your Role",
+            "id_card": "ID Card",
+            "upload_id_card": "Upload ID Card",
+            "upload_id_card_hint": "Tap to upload front of your ID",
+            "change_id_card": "Change Photo",
+            "create_account": "Create Account",
+            "google_signup": "Sign up with Google",
+            "already_have_account": "Already have an account?",
+            "login_link": "Log in"
         },
         "validation": {
             "invalid_email": "Please enter a valid email address",
-            "invalid_password": "Password must be at least 6 characters"
+            "invalid_password": "Password must be at least 6 characters",
+            "id_card_required": "ID card is required"
         },
         "reset_password": {
             "title": "Forgot Password?",
@@ -74,6 +94,33 @@
             "resend_button": "Resend Link",
             "resend_wait": "Resend in {seconds}s",
             "back_to_login": "Back to Login"
+        },
+        "complete_profile": {
+            "title": "Complete Your Profile",
+            "subtitle": "Just a few more details to get you on the road with Karaba.",
+            "submit_button": "Finish Registration"
         }
+    },
+    "permissions": {
+        "camera_denied": "Camera access permanently denied. Please enable it in settings.",
+        "camera_required": "Camera permission is required to take photos.",
+        "storage_denied": "Storage access permanently denied. Please enable it in settings.",
+        "storage_required": "Storage permission is required to access files.",
+        "photos_denied": "Photos access permanently denied. Please enable it in settings.",
+        "photos_required": "Photos permission is required to select images."
+    },
+    "media": {
+        "no_image_selected": "No image was selected.",
+        "no_images_selected": "No images were selected.",
+        "no_document_selected": "No document was selected.",
+        "no_documents_selected": "No documents were selected.",
+        "invalid_document": "Invalid document file.",
+        "invalid_documents": "Invalid document files.",
+        "error": "An error occurred while accessing media",
+        "take_photo": "Take Photo",
+        "choose_from_gallery": "Choose from Gallery",
+        "choose_document": "Choose Document",
+        "choose_documents": "Choose Documents",
+        "delete_photo": "Delete Photo"
     }
 }
