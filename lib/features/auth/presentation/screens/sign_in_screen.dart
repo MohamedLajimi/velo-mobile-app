@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:karaba/core/common/blocs/user_cubit/user_cubit.dart';
 import 'package:karaba/core/common/widgets/app_snackbar.dart';
 import 'package:karaba/core/common/widgets/custom_social_button.dart';
 import 'package:karaba/core/common/widgets/language_dropdown_selector.dart';
@@ -25,13 +26,16 @@ class SignInScreen extends StatelessWidget {
           if (state is AuthError) {
             AppSnackbar.show(
               context,
-              message: state.message,
+              message: context.tr(state.message),
               type: SnackBarType.error,
             );
           }
+          if (state is AuthSuccess) {
+            context.read<UserCubit>().updateUser(state.user);
+          }
         },
         child: SingleChildScrollView(
-          padding: const .symmetric(horizontal: 16, vertical: 24),
+          padding: const .all(16),
           child: Column(
             crossAxisAlignment: .stretch,
             children: [
