@@ -35,6 +35,14 @@ class MediaFailure extends Failure {
   const MediaFailure(super.message);
 }
 
+class NotFoundFailure extends Failure {
+  const NotFoundFailure(super.message);
+}
+
+class ValidationFailure extends Failure {
+  const ValidationFailure(super.message);
+}
+
 class ServerFailure extends Failure {
   const ServerFailure([super.message = 'error.server_error']);
 }
