@@ -122,5 +122,78 @@
         "choose_document": "Choose Document",
         "choose_documents": "Choose Documents",
         "delete_photo": "Delete Photo"
+    },
+    "car_features": {
+        "ac": "Air Conditioning",
+        "bluetooth": "Bluetooth",
+        "infotainment": "Infotainment",
+        "gps": "GPS",
+        "backupCamera": "Backup Camera",
+        "sunroof": "Sunroof",
+        "cruiseControl": "Cruise Control",
+        "typeC": "Type C",
+        "heatedSeats": "Heated Seats",
+        "keyless": "Keyless"
+    },
+    "car_status": {
+        "pending": "Pending",
+        "verified": "Verified",
+        "rejected": "Rejected",
+        "hidden": "Hidden",
+        "suspended": "Suspended"
+    },
+    "document_type": {
+        "registration": "Registration",
+        "insurance": "Insurance",
+        "technicalInspection": "Technical Inspection",
+        "identityCard": "Identity Card",
+        "paymentProof": "Payment Proof"
+    },
+    "fuel_type": {
+        "petrol": "Petrol",
+        "diesel": "Diesel",
+        "electric": "Electric",
+        "hybrid": "Hybrid"
+    },
+    "transmission": {
+        "manual": "Manual",
+        "automatic": "Automatic"
+    },
+    "car_management": {
+        "error": {
+            "auth_required": "You must be logged in to manage cars",
+            "permission_denied": "You don't have permission to perform this action",
+            "access_denied": "Access denied. You can only manage your own cars",
+            "upload_permission_denied": "You don't have permission to upload files",
+            "car_not_found": "Car not found",
+            "car_already_exists": "This car already exists",
+            "duplicate_entry": "Duplicate entry detected",
+            "invalid_owner": "Invalid owner ID",
+            "invalid_reference": "Invalid reference in the data",
+            "invalid_id": "Invalid car ID format",
+            "invalid_data": "Invalid data provided",
+            "invalid_date_range": "End date must be after or equal to start date",
+            "value_out_of_range": "Value is out of acceptable range",
+            "brand_required": "Car brand is required",
+            "model_required": "Car model is required",
+            "year_required": "Manufacturing year is required",
+            "price_required": "Price per day is required",
+            "seats_required": "Number of seats is required",
+            "images_required": "At least one car image is required",
+            "location_required": "Car location is required",
+            "required_field_missing": "A required field is missing",
+            "file_not_found": "File not found",
+            "invalid_file": "Invalid file",
+            "file_too_large": "File size exceeds the maximum limit (10MB)",
+            "invalid_file_format": "Invalid file format. Accepted formats: JPG, PNG, PDF",
+            "file_already_exists": "A file with this name already exists",
+            "invalid_bucket": "Invalid storage bucket",
+            "storage_quota_exceeded": "Storage quota exceeded",
+            "upload_failed": "Failed to upload file. Please try again",
+            "database_error": "A database error occurred. Please try again",
+            "network_error": "Network error. Please check your connection",
+            "server_error": "Server error. Please try again later",
+            "unknown_error": "An unexpected error occurred"
+        }
     }
 }
