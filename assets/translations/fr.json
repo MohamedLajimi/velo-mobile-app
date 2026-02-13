@@ -122,5 +122,78 @@
         "choose_document": "Choisir un document",
         "choose_documents": "Choisir des documents",
         "delete_photo": "Supprimer la photo"
+    },
+    "car_features": {
+        "ac": "Climatisation",
+        "bluetooth": "Bluetooth",
+        "infotainment": "Infodivertissement",
+        "gps": "GPS",
+        "backupCamera": "Caméra de recul",
+        "sunroof": "Toit ouvrant",
+        "cruiseControl": "Régulateur de vitesse",
+        "typeC": "Type C",
+        "heatedSeats": "Sièges chauffants",
+        "keyless": "Sans clé"
+    },
+    "car_status": {
+        "pending": "En attente",
+        "verified": "Vérifié",
+        "rejected": "Rejeté",
+        "hidden": "Caché",
+        "suspended": "Suspendu"
+    },
+    "document_type": {
+        "registration": "Immatriculation",
+        "insurance": "Assurance",
+        "technicalInspection": "Contrôle technique",
+        "identityCard": "Carte d'identité",
+        "paymentProof": "Preuve de paiement"
+    },
+    "fuel_type": {
+        "petrol": "Essence",
+        "diesel": "Diesel",
+        "electric": "Électrique",
+        "hybrid": "Hybride"
+    },
+    "transmission": {
+        "manual": "Manuelle",
+        "automatic": "Automatique"
+    },
+    "car_management": {
+        "error": {
+            "auth_required": "Vous devez être connecté pour gérer les voitures",
+            "permission_denied": "Vous n'avez pas la permission d'effectuer cette action",
+            "access_denied": "Accès refusé. Vous ne pouvez gérer que vos propres voitures",
+            "upload_permission_denied": "Vous n'avez pas la permission de télécharger des fichiers",
+            "car_not_found": "Voiture introuvable",
+            "car_already_exists": "Cette voiture existe déjà",
+            "duplicate_entry": "Entrée en double détectée",
+            "invalid_owner": "ID de propriétaire invalide",
+            "invalid_reference": "Référence invalide dans les données",
+            "invalid_id": "Format d'ID de voiture invalide",
+            "invalid_data": "Données fournies invalides",
+            "invalid_date_range": "La date de fin doit être postérieure ou égale à la date de début",
+            "value_out_of_range": "La valeur est hors de la plage acceptable",
+            "brand_required": "La marque de la voiture est requise",
+            "model_required": "Le modèle de la voiture est requis",
+            "year_required": "L'année de fabrication est requise",
+            "price_required": "Le prix par jour est requis",
+            "seats_required": "Le nombre de sièges est requis",
+            "images_required": "Au moins une image de la voiture est requise",
+            "location_required": "L'emplacement de la voiture est requis",
+            "required_field_missing": "Un champ obligatoire est manquant",
+            "file_not_found": "Fichier introuvable",
+            "invalid_file": "Fichier invalide",
+            "file_too_large": "La taille du fichier dépasse la limite maximale (10 Mo)",
+            "invalid_file_format": "Format de fichier invalide. Formats acceptés : JPG, PNG, PDF",
+            "file_already_exists": "Un fichier avec ce nom existe déjà",
+            "invalid_bucket": "Bucket de stockage invalide",
+            "storage_quota_exceeded": "Quota de stockage dépassé",
+            "upload_failed": "Échec du téléchargement du fichier. Veuillez réessayer",
+            "database_error": "Une erreur de base de données s'est produite. Veuillez réessayer",
+            "network_error": "Erreur réseau. Veuillez vérifier votre connexion",
+            "server_error": "Erreur serveur. Veuillez réessayer plus tard",
+            "unknown_error": "Une erreur inattendue s'est produite"
+        }
     }
 }
